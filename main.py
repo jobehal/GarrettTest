@@ -67,8 +67,9 @@ class PhoneBill(object):
 
         price = sum([phoneCall.price for phoneCall in phoneCalls if phoneCall.number != mostCommonNum])
         print("Total price: {}".format(price))
+        return price
 
-csvPath = r"E:\Projekty\Garrett_Test\generated_sample_2.csv"
-PhoneBill.calculate(csvPath)
+# csvPath = r"E:\Projekty\Garrett_Test\generated_sample_2.csv"
+# PhoneBill.calculate(csvPath)
 
     
