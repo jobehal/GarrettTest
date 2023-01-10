@@ -34,13 +34,13 @@ class PhoneCall(object):
         for i in range(10000):
             totalPrice += self.__get_minute_rate(callTime)
             callTime += timedelta(minutes=1)
-            if callTime > self.end:
+            if callTime >= self.end:
                 break        
         self.price = totalPrice        
 
 
 class PhoneBill(object):
-    
+        
     @staticmethod
     def get_most_used_number(phoneCalls):
         numbers       = [phoneCall.number for phoneCall in phoneCalls]
@@ -68,7 +68,7 @@ class PhoneBill(object):
         price = sum([phoneCall.price for phoneCall in phoneCalls if phoneCall.number != mostCommonNum])
         print("Total price: {}".format(price))
 
-csvPath = r"E:\Projekty\Workshop_Radek\generated_sample_2.csv"
+csvPath = r"E:\Projekty\Garrett_Test\generated_sample_2.csv"
 PhoneBill.calculate(csvPath)
 
     
